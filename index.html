@@ -199,6 +199,40 @@ a:hover {
   margin: 0;
   font-size: 0.95em;
 }
+    .edu-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.edu-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  background: white;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.edu-degree {
+  color: #f1f5f9;
+}
+
+.edu-date {
+  color: #94a3b8;
+  font-size: 0.9em;
+}
+
+.edu-school {
+  color: #38bdf8;
+  margin-top: 3px;
+}
   </style>
 </head>
 <body>
@@ -275,17 +309,23 @@ a:hover {
   <h2>Education</h2>
 
   <div class="edu-card">
-    <div class="edu-header">
-      <span class="edu-degree">PhD in Computer Science</span>
-      <span class="edu-date">2025 – Present</span>
+  <div class="edu-top">
+    <img src="logos/gatech.png" class="edu-logo">
+    <div>
+      <div class="edu-header">
+        <span class="edu-degree">PhD in Computer Science</span>
+        <span class="edu-date">2025 – Present</span>
+      </div>
+      <div class="edu-school">Universitat Politècnica de Catalunya (UPC)</div>
     </div>
-    <div class="edu-school">Universitat Politècnica de Catalunya (UPC)</div>
-    <p>
-      INPhINIT Fellowship – La Caixa Foundation<br>
-      Research: Heterogeneous HPC Systems & Distributed Runtime Models<br>
-      Supervisor: Rosa M. Badia (BSC)
-    </p>
   </div>
+
+  <p>
+    INPhINIT Fellowship – La Caixa Foundation<br>
+    Research: Heterogeneous HPC Systems & Distributed Runtime Models<br>
+    Supervisor: Rosa M. Badia (BSC)
+  </p>
+</div>
 
   <div class="edu-card">
     <div class="edu-header">
