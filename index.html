@@ -160,6 +160,45 @@ a:hover {
 .exp-card li {
   margin-bottom: 5px;
 }
+    .edu-card {
+  background: rgba(255,255,255,0.04);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border-left: 3px solid #7dd3fc;
+  transition: 0.3s;
+}
+
+.edu-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0 20px rgba(125,211,252,0.2);
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.edu-degree {
+  color: #f1f5f9;
+}
+
+.edu-date {
+  color: #94a3b8;
+  font-size: 0.9em;
+}
+
+.edu-school {
+  color: #38bdf8;
+  margin: 5px 0 10px 0;
+  font-weight: 500;
+}
+
+.edu-card p {
+  margin: 0;
+  font-size: 0.95em;
+}
   </style>
 </head>
 <body>
@@ -228,6 +267,59 @@ a:hover {
       <li>Building distributed runtime systems for quantum-classical workflows</li>
       <li>Scaling execution across CPUs, GPUs, and HPC clusters</li>
     </ul>
+  </div>
+
+</section>
+
+  <section>
+  <h2>Education</h2>
+
+  <div class="edu-card">
+    <div class="edu-header">
+      <span class="edu-degree">PhD in Computer Science</span>
+      <span class="edu-date">2025 – Present</span>
+    </div>
+    <div class="edu-school">Universitat Politècnica de Catalunya (UPC)</div>
+    <p>
+      INPhINIT Fellowship – La Caixa Foundation<br>
+      Research: Heterogeneous HPC Systems & Distributed Runtime Models<br>
+      Supervisor: Rosa M. Badia (BSC)
+    </p>
+  </div>
+
+  <div class="edu-card">
+    <div class="edu-header">
+      <span class="edu-degree">MSc in Computer Science</span>
+      <span class="edu-date">2023 – 2025</span>
+    </div>
+    <div class="edu-school">Georgia Institute of Technology</div>
+    <p>
+      Specialization: Machine Learning & Computing Systems<br>
+      Courses: HPC Architecture, Parallel Algorithms, Deep Learning
+    </p>
+  </div>
+
+  <div class="edu-card">
+    <div class="edu-header">
+      <span class="edu-degree">MSc in Quantum Science & Technology</span>
+      <span class="edu-date">2024 – 2025</span>
+    </div>
+    <div class="edu-school">University of Barcelona</div>
+    <p>
+      Specialization: Quantum Computing Software & Algorithms
+    </p>
+  </div>
+
+  <div class="edu-card">
+    <div class="edu-header">
+      <span class="edu-degree">BSc in Computer Science</span>
+      <span class="edu-date">2020 – 2023</span>
+    </div>
+    <div class="edu-school">University of Delaware</div>
+    <p>
+      Cum Laude (Top 8%)<br>
+      Data Science concentration • Minors in Mathematics & Cognitive Science
+    </p>
   </div>
 
 </section>
