@@ -233,6 +233,46 @@ a:hover {
   color: #38bdf8;
   margin-top: 3px;
 }
+    .thumbnail {
+  position: relative;
+  cursor: pointer;
+}
+
+.thumbnail img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  padding: 10px 18px;
+  transition: 0.3s;
+}
+
+.thumbnail:hover .play-button {
+  background: rgba(56,189,248,0.8);
+}
+
+.video-card {
+  background: rgba(255,255,255,0.04);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(56,189,248,0.2);
+}
   </style>
 </head>
 <body>
@@ -414,6 +454,25 @@ a:hover {
     </div>
 
   </section>
+
+  <section>
+  <h2>Talks & Videos</h2>
+
+  <div class="video-card">
+    <a href="https://www.youtube.com/watch?v=_CkkZkFi_tQ" target="_blank">
+      <div class="thumbnail">
+        <img src="https://img.youtube.com/vi/_CkkZkFi_tQ/maxresdefault.jpg" alt="Talk thumbnail">
+        <div class="play-button">▶</div>
+      </div>
+    </a>
+
+    <div class="video-info">
+      <strong>SC'25 Workshop Talk — Distributed Quantum Circuit Cutting</strong>
+      <p>Hybrid quantum-classical workflows on HPC systems.</p>
+    </div>
+  </div>
+
+</section>
 
   <footer>
     © 2026 Mar Tejedor Ninou
