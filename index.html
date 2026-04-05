@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mar Tejedor</title>
 
+  <link rel="icon" href="logos/logo.png" sizes="32x32">
   <!-- Google Font -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -441,6 +442,183 @@ a:hover {
   color: #38bdf8;
   margin-top: 3px;
 }
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.award-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.award-card i {
+  font-size: 28px;
+  color: #facc15; /* gold */
+  margin-bottom: 10px;
+}
+
+.award-title {
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.award-sub {
+  font-size: 0.9em;
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+.award-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 25px rgba(250,204,21,0.3);
+}
+.pub-card {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(148,163,184,0.2);
+}
+
+.pub-card:last-child {
+  border-bottom: none;
+}
+
+.pub-title {
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.pub-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.85em;
+  color: #94a3b8;
+}
+
+.pub-tags {
+  margin-top: 6px;
+}
+
+.pub-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.pub-links a {
+  color: #38bdf8;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+.pub-links a:hover {
+  text-decoration: underline;
+}
+
+.pub-tags-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.pub-tags span {
+  background: transparent;
+  border: 1px solid rgba(56,189,248,0.4);
+  color: #38bdf8;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.7em;
+  margin-right: 5px;
+}
+
+.pub-citations {
+  font-size: 0.8em;
+  color: #facc15;
+  white-space: nowrap;
+}
+.pub-title a {
+  color: #f1f5f9;          /* same as normal title */
+  text-decoration: none;   /* remove underline */
+}
+
+.pub-title a:hover {
+  color: #38bdf8;          /* highlight on hover */
+}
+.pub-card {
+  cursor: pointer;
+}
+.pub-card {
+  background: rgba(255, 255, 255, 0.03);   /* very subtle */
+  border: 0px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+
+  transition: 0.25s ease;
+}
+
+.pub-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(56, 189, 248, 0.25);
+  transform: translateY(-2px);
+}
+
+.pub-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.pub-title a {
+  color: #f1f5f9;
+  text-decoration: none;
+}
+
+.pub-title a:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.pub-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.85em;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.pub-tags-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pub-tags span {
+  display: inline-block;
+  background: rgba(30, 41, 59, 0.6);
+  color: #38bdf8;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.7em;
+  margin-right: 5px;
+}
+
+.pub-citations {
+  font-size: 0.8em;
+  color: #facc15;
+  white-space: nowrap;
+}
+
   </style>
 </head>
 <body>
@@ -472,6 +650,67 @@ a:hover {
       My research scales emerging architectures across CPUs, GPUs, and QPUs.
     </p>
   </section>
+
+  
+
+  <section>
+  <h2>Experience</h2>
+
+  <div class="exp-card">
+    <div class="exp-top">
+      <img src="logos/nvidia.png" class="exp-logo">
+      <div class="exp-content">
+        <div class="exp-header">
+          <span class="exp-role">HPC & AI Software Architect Intern</span>
+          <span class="exp-date">2026</span>
+        </div>
+
+        <div class="exp-company">NVIDIA</div>
+      </div>
+    </div>
+    <ul>
+      <li>Optimized GPU communication and analyzed distributed AI workloads</li>
+      <li>Studied multi-GPU traffic and scheduling behavior</li>
+    </ul>
+  </div>
+
+   <div class="exp-card">
+    <div class="exp-top">
+      <img src="logos/bsc.png" class="exp-logo">
+      <div class="exp-content">
+        <div class="exp-header">
+      <span class="exp-role">PhD Researcher</span>
+      <span class="exp-date">2023 – Present</span>
+    </div>
+    <div class="exp-company">Barcelona Supercomputing Center</div>
+    </div>
+    </div>
+    <ul>
+      <li>Building distributed runtime systems for quantum-classical workflows</li>
+      <li>Scaling execution across CPUs, GPUs, and HPC clusters</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-top">
+      <img src="logos/cern.png" class="exp-logo">
+      <div class="exp-content">
+        <div class="exp-header">
+      <span class="exp-role">Openlab Student</span>
+      <span class="exp-date">2025</span>
+    </div>
+    <div class="exp-company">CERN</div>
+    </div>
+    </div>
+    <ul>
+      <li>Developed Kubernetes-based hybrid quantum-HPC frameworks</li>
+      <li>Integrated GPU and QPU execution pipelines</li>
+    </ul>
+  </div>
+
+ 
+
+</section>
 
   <section>
   <h2>Education</h2>
@@ -548,67 +787,6 @@ a:hover {
 </section>
 
   <section>
-  <h2>Experience</h2>
-
-  <div class="exp-card">
-    <div class="exp-top">
-      <img src="logos/nvidia.png" class="exp-logo">
-      <div class="exp-content">
-        <div class="exp-header">
-          <span class="exp-role">HPC & AI Software Architect Intern</span>
-          <span class="exp-date">2026</span>
-        </div>
-
-        <div class="exp-company">NVIDIA</div>
-      </div>
-    </div>
-    <ul>
-      <li>Optimized GPU communication and analyzed distributed AI workloads</li>
-      <li>Studied multi-GPU traffic and scheduling behavior</li>
-    </ul>
-  </div>
-
-   <div class="exp-card">
-    <div class="exp-top">
-      <img src="logos/bsc.png" class="exp-logo">
-      <div class="exp-content">
-        <div class="exp-header">
-      <span class="exp-role">PhD Researcher</span>
-      <span class="exp-date">2023 – Present</span>
-    </div>
-    <div class="exp-company">Barcelona Supercomputing Center</div>
-    </div>
-    </div>
-    <ul>
-      <li>Building distributed runtime systems for quantum-classical workflows</li>
-      <li>Scaling execution across CPUs, GPUs, and HPC clusters</li>
-    </ul>
-  </div>
-
-  <div class="exp-card">
-    <div class="exp-top">
-      <img src="logos/cern.png" class="exp-logo">
-      <div class="exp-content">
-        <div class="exp-header">
-      <span class="exp-role">Openlab Student</span>
-      <span class="exp-date">2025</span>
-    </div>
-    <div class="exp-company">CERN</div>
-    </div>
-    </div>
-    <ul>
-      <li>Developed Kubernetes-based hybrid quantum-HPC frameworks</li>
-      <li>Integrated GPU and QPU execution pipelines</li>
-    </ul>
-  </div>
-
- 
-
-</section>
-
-  
-
-  <section>
   <h2>Projects</h2>
 
   <div class="project-card highlight">
@@ -654,41 +832,91 @@ a:hover {
   </div>
 
 </div>
-
-</section>
-  <section>
+  </section>
+<section>
   <h2>Publications</h2>
 
-  <div class="item">
-    <strong>Kubernetes-Orchestrated Hybrid Quantum-Classical Workflows</strong><br>
-    <small>
-      M. Tejedor, M. Grossi, C. Tüysüz, R. Rocha, S. Vallecorsa — arXiv 2026<br>
-      <a href="https://arxiv.org/abs/2603.24206" target="_blank">[Read paper]</a>
-    </small>
+  <!-- PAPER 1 -->
+  <div class="pub-card" onclick="window.open('https://arxiv.org/abs/2603.24206', '_blank')">
+    <div class="pub-title">
+      <a>
+        Kubernetes-Orchestrated Hybrid Quantum-Classical Workflows
+      </a>
+    </div>
+
+    <div class="pub-meta">
+      <span class="pub-authors">
+        <strong>M. Tejedor</strong>, M. Grossi, C. Tüysüz, R. Rocha, S. Vallecorsa
+      </span>
+      <span class="pub-venue">arXiv 2026</span>
+    </div>
+
+    <div class="pub-tags-line">
+      <div class="pub-tags">
+        <span>HPC</span>
+        <span>Quantum</span>
+        <span>Kubernetes</span>
+      </div>
+    </div>
   </div>
 
-  <div class="item">
-    <strong>Distributed Quantum Circuit Cutting for Hybrid Quantum-Classical High-Performance Computing</strong><br>
-    <small>
-      M. Tejedor, B. Casas, J. Conejero, A. Cervera-Lierta, R. M. Badia — SC'25 Workshops<br>
-      <a href="https://arxiv.org/abs/2505.01184" target="_blank">[Read paper]</a>
-    </small>
+
+  <!-- PAPER 2 -->
+  <div class="pub-card" onclick="window.open('https://arxiv.org/abs/2603.24206', '_blank')">
+    <div class="pub-title">
+      <a>
+        Distributed Quantum Circuit Cutting for Hybrid Quantum-Classical High-Performance Computing
+      </a>
+    </div>
+
+    <div class="pub-meta">
+      <span class="pub-authors">
+        <strong>M. Tejedor</strong>, B. Casas, J. Conejero, A. Cervera-Lierta, R. M. Badia
+      </span>
+      <span class="pub-venue">SC'25 Workshops</span>
+    </div>
+
+    <div class="pub-tags-line">
+      <div class="pub-tags">
+        <span>HPC</span>
+        <span>Quantum</span>
+        <span>Distributed Systems</span>
+      </div>
+
+      <div class="pub-citations">
+       <i class="fas fa-star"></i> 
+        8 citations
+      </div>
+    </div>
   </div>
 
 </section>
 
   <section>
-    <h2>Awards</h2>
+  <h2>Awards</h2>
 
-    <div class="item">
-      La Caixa INPhINIT Fellowship (2025)
+  <div class="awards-grid">
+
+    <div class="award-card">
+      <i class="fas fa-trophy"></i>
+      <div class="award-title">INPhINIT Fellowship</div>
+      <div class="award-sub">La Caixa • 2025</div>
     </div>
 
-    <div class="item">
-      ACM SIGHPC Travel Grant (SC'25)
+    <div class="award-card">
+      <i class="fas fa-medal"></i>
+      <div class="award-title">ACM SIGHPC Travel Grant</div>
+      <div class="award-sub">SC'25</div>
     </div>
 
-  </section>
+    <div class="award-card">
+      <i class="fas fa-award"></i> 
+      <div class="award-title">Catalonia Quantum Academy</div>
+      <div class="award-sub">Master Scholarship</div>
+    </div>
+
+  </div>
+</section>
 
    <section>
   <h2>Talks & Videos</h2>
