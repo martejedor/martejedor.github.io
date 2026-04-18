@@ -70,6 +70,13 @@ a:hover {
       text-decoration: none;
       color: #38bdf8;
       font-weight: 500;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .links a:hover {
+      color: #a0dffd;       /* lighter blue */
+      transform: translateY(-1px); /* subtle lift */
+      
     }
 
     section {
@@ -289,11 +296,7 @@ a:hover {
   box-shadow: 0 0 20px rgba(56,189,248,0.2);
 }
 
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 .project-tag {
   background: #38bdf8;
@@ -332,10 +335,15 @@ a:hover {
   flex: 1;
 }
 
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.project-title {
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.project-title:hover {
+  color: #38bdf8;
+  text-decoration: underline;
 }
 
 .project-tag {
@@ -371,7 +379,8 @@ a:hover {
 }
 
 .project-links a:hover {
-  text-decoration: underline;
+  color: #a0dffd;       /* lighter blue */
+  transform: translateY(-1px); /* subtle lift */
 }
 .project-tags {
   display: flex;
@@ -396,8 +405,12 @@ a:hover {
   gap: 6px;
 }
 
-.project-links a:hover {
-  text-decoration: underline;
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .exp-top {
@@ -455,6 +468,12 @@ a:hover {
   text-align: center;
   transition: 0.3s;
   backdrop-filter: blur(10px);
+  cursor: default;
+}
+
+.award-card.clickable {
+  cursor: pointer; /* only clickable ones */
+
 }
 
 .award-card i {
@@ -466,6 +485,16 @@ a:hover {
 .award-title {
   font-weight: 600;
   color: #f1f5f9;
+}
+
+.award-title a {
+  color: #f1f5f9;
+  text-decoration: none;
+}
+
+.award-title a:hover {
+  color: #facc15; /* gold hover fits awards nicely */
+  text-decoration: underline;
 }
 
 .award-sub {
@@ -569,6 +598,7 @@ a:hover {
 .pub-card:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 20px rgba(56,189,248,0.2);
   transform: translateY(-2px);
 }
 
@@ -618,6 +648,61 @@ a:hover {
   color: #facc15;
   white-space: nowrap;
 }
+.profile-container {
+  width: 180px;
+  height: 180px;
+  perspective: 1000px; /* enables 3D */
+}
+
+.profile-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+.profile-container:hover .profile-flip {
+  transform: rotateY(180deg); /* flip like a coin */
+}
+
+.profile-front,
+.profile-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 0 25px rgba(56,189,248,0.5);
+
+  backface-visibility: hidden;
+}
+
+.profile-front img,
+.profile-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* back side */
+.profile-back {
+  transform: rotateY(180deg);
+}
+.profile-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Coin thickness illusion */
+.profile-container:hover .profile-flip {
+  transform: rotateY(180deg);
+}
 
   </style>
 </head>
@@ -626,7 +711,19 @@ a:hover {
 <div class="container">
 
   <header>
-    <img src="Mar_Pic.png" alt="Mar Tejedor" class="profile-img">
+    <div class="profile-container">
+  <div class="profile-flip">
+
+    <div class="profile-front">
+      <img src="Mar_Pic.png" alt="Mar Tejedor">
+    </div>
+
+    <div class="profile-back">
+      <img src="Mar_Pic_back.png" alt="Back Image">
+    </div>
+
+  </div>
+</div>
 
     <div class="hero-text">
       <h1>Mar Tejedor</h1>
@@ -642,18 +739,22 @@ a:hover {
     </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I work at the intersection of high-performance computing and quantum computing,
-      focusing on distributed runtimes and hybrid quantum-classical systems.
-      My research scales emerging architectures across CPUs, GPUs, and QPUs.
-    </p>
-  </section>
+<section>
+  <h2>About Me</h2>
+  <p>
+    PhD researcher working on scalable runtime systems for heterogeneous computing across CPUs, GPUs, and emerging accelerators.
+  </p>
+  <ul>
+    <li>Distributed systems and heterogeneous HPC</li>
+    <li>Runtime systems and scheduling</li>
+    <li>Multi-GPU and large-scale computing</li>
+    <li>Hybrid computing models (quantum–classical)</li>
+  </ul>
+</section>
 
   
 
-  <section>
+<section>
   <h2>Experience</h2>
 
   <div class="exp-card">
@@ -664,30 +765,29 @@ a:hover {
           <span class="exp-role">HPC & AI Software Architect Intern</span>
           <span class="exp-date">2026</span>
         </div>
-
         <div class="exp-company">NVIDIA</div>
       </div>
     </div>
     <ul>
-      <li>Optimized GPU communication and analyzed distributed AI workloads</li>
-      <li>Studied multi-GPU traffic and scheduling behavior</li>
+      <li>Analyzed communication patterns of Mixture-of-Experts (MoE) models in large-scale multi-GPU systems</li>
+      <li>Characterized inter-GPU traffic and optimized distributed execution using RDMA, NCCL, and low-level profiling</li>
     </ul>
   </div>
 
-   <div class="exp-card">
+  <div class="exp-card">
     <div class="exp-top">
       <img src="logos/bsc.png" class="exp-logo">
       <div class="exp-content">
         <div class="exp-header">
-      <span class="exp-role">PhD Researcher</span>
-      <span class="exp-date">2023 – Present</span>
-    </div>
-    <div class="exp-company">Barcelona Supercomputing Center</div>
-    </div>
+          <span class="exp-role">PhD Researcher</span>
+          <span class="exp-date">2023 – Present</span>
+        </div>
+        <div class="exp-company">Barcelona Supercomputing Center</div>
+      </div>
     </div>
     <ul>
-      <li>Building distributed runtime systems for quantum-classical workflows</li>
-      <li>Scaling execution across CPUs, GPUs, and HPC clusters</li>
+      <li>Designing distributed runtime systems for heterogeneous HPC and quantum–HPC integration</li>
+      <li>Scaling hybrid workloads across CPUs, GPUs, and QPU for emerging applications</li>
     </ul>
   </div>
 
@@ -696,19 +796,17 @@ a:hover {
       <img src="logos/cern.png" class="exp-logo">
       <div class="exp-content">
         <div class="exp-header">
-      <span class="exp-role">Openlab Student</span>
-      <span class="exp-date">2025</span>
-    </div>
-    <div class="exp-company">CERN</div>
-    </div>
+          <span class="exp-role">Openlab Student</span>
+          <span class="exp-date">2025</span>
+        </div>
+        <div class="exp-company">CERN</div>
+      </div>
     </div>
     <ul>
-      <li>Developed Kubernetes-based hybrid quantum-HPC frameworks</li>
-      <li>Integrated GPU and QPU execution pipelines</li>
+      <li>Built Kubernetes-based frameworks for orchestrating distributed and hybrid quantum-HPC workflows</li>
+      <li>Integrated heterogeneous execution pipelines across GPUs and cloud based quantum accelerators</li>
     </ul>
   </div>
-
- 
 
 </section>
 
@@ -799,18 +897,19 @@ a:hover {
     <!-- CONTENT -->
     <div class="project-content">
 
-      <div class="project-header">
-        <strong>Qdislib</strong>
+    <div class="project-header">
+      <a href="https://pypi.org/project/Qdislib/" target="_blank" class="project-title">
+        Qdislib
+      </a>
 
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Open Source</span>
-        </div>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Open Source</span>
       </div>
+    </div>
 
       <p>
-        Distributed quantum circuit cutting library enabling scalable hybrid 
-        quantum-classical execution across HPC systems.
+        Scalable distributed framework for quantum circuit cutting, enabling hybrid quantum–HPC workflows and execution across large-scale heterogeneous infrastructures.
       </p>
 
       <!-- INSTALL + LINKS SAME LINE -->
@@ -853,19 +952,20 @@ a:hover {
 
     <div class="pub-tags-line">
       <div class="pub-tags">
-        <span>HPC</span>
-        <span>Quantum</span>
         <span>Kubernetes</span>
+        <span>Argo Workflows</span>
+        <span>Quantum</span>
+        <span>Cloud</span>
       </div>
     </div>
   </div>
 
 
   <!-- PAPER 2 -->
-  <div class="pub-card" onclick="window.open('https://arxiv.org/abs/2603.24206', '_blank')">
+  <div class="pub-card" onclick="window.open('https://dl.acm.org/doi/full/10.1145/3731599.3767547', '_blank')">
     <div class="pub-title">
       <a>
-        Distributed Quantum Circuit Cutting for Hybrid Quantum-Classical High-Performance Computing
+        Orchestrating Quantum-HPC Workflows with Distributed Quantum Circuit Cutting
       </a>
     </div>
 
@@ -881,11 +981,12 @@ a:hover {
         <span>HPC</span>
         <span>Quantum</span>
         <span>Distributed Systems</span>
+        <span>Circuit Cutting</span>
       </div>
 
       <div class="pub-citations">
        <i class="fas fa-star"></i> 
-        8 citations
+        9 citations
       </div>
     </div>
   </div>
@@ -895,13 +996,21 @@ a:hover {
   <section>
   <h2>Awards</h2>
 
-  <div class="awards-grid">
+    <div class="awards-grid">
 
-    <div class="award-card">
-      <i class="fas fa-trophy"></i>
-      <div class="award-title">INPhINIT Fellowship</div>
-      <div class="award-sub">La Caixa • 2025</div>
+      <div class="award-card clickable" onclick="window.open('https://lacaixafoundation.org/documents/d/la-caixa-foundation/doctoral-inphinit-retaining-2025-fellows-pdf', '_blank')">
+
+  <i class="fas fa-trophy"></i>
+
+    <div class="award-title">
+      <a>
+        INPhINIT Fellowship
+      </a>
     </div>
+
+    <div class="award-sub">La Caixa • 2025</div>
+
+  </div>
 
     <div class="award-card">
       <i class="fas fa-medal"></i>
@@ -930,7 +1039,7 @@ a:hover {
     </a>
 
     <div class="video-info">
-      <strong>SC'25 Workshop Talk — Distributed Quantum Circuit Cutting</strong>
+      <strong>Quantum Spain Seminar — Distributed Quantum Circuit Cutting</strong>
       <p>Hybrid quantum-classical workflows on HPC systems.</p>
     </div>
   </div>
